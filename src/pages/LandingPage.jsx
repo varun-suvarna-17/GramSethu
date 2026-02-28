@@ -1,44 +1,71 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../context/LanguageContext';
-import Header from '../components/Header';
-import { Mic, HeartPulse } from 'lucide-react';
+import { Mic, HeartPulse, WifiOff, Stethoscope } from 'lucide-react';
 
 const LandingPage = () => {
-    const { t } = useLanguage();
-
     return (
-        <div className="min-h-[100dvh] bg-gray-50 flex flex-col font-sans">
-            <Header />
-            <main className="flex-1 flex flex-col items-center justify-center p-6 text-center fade-in">
-                <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                    <HeartPulse size={48} className="text-primary" />
-                </div>
-                <h2 className="text-4xl font-extrabold text-gray-900 mb-3 tracking-tight">{t('app_name')}</h2>
-                <p className="text-lg text-gray-600 mb-10 max-w-xs leading-relaxed font-medium">
-                    {t('tagline')}
-                </p>
+        <div className="min-h-[100dvh] bg-white flex flex-col font-sans fade-in">
+            <main className="flex-1 flex flex-col items-center justify-center p-6 text-center max-w-3xl mx-auto w-full">
 
-                <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100 w-full max-w-sm space-y-4">
+                {/* Illustration / Icon */}
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 shadow-sm">
+                    <HeartPulse size={40} className="text-primary" />
+                </div>
+
+                {/* Main Headings */}
+                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3 tracking-tight">
+                    Gram<span className="text-primary">Sethu</span>
+                </h1>
+                <h2 className="text-lg md:text-xl text-gray-600 font-medium mb-8 max-w-md mx-auto leading-relaxed">
+                    An Offline-First AI Triage Assistant for Rural Healthcare
+                </h2>
+
+                {/* Features Description */}
+                <div className="bg-primary/5 border border-primary/10 rounded-2xl p-6 mb-10 w-full max-w-sm mx-auto text-left shadow-sm">
+                    <ul className="space-y-4 text-gray-700 font-medium text-sm sm:text-base">
+                        <li className="flex items-center gap-3">
+                            <div className="bg-white p-2 rounded-full shadow-sm shrink-0">
+                                <Mic size={18} className="text-primary" />
+                            </div>
+                            <span>Voice-based symptom reporting</span>
+                        </li>
+                        <li className="flex items-center gap-3">
+                            <div className="bg-white p-2 rounded-full shadow-sm shrink-0">
+                                <WifiOff size={18} className="text-primary" />
+                            </div>
+                            <span>Works without constant internet</span>
+                        </li>
+                        <li className="flex items-center gap-3">
+                            <div className="bg-white p-2 rounded-full shadow-sm shrink-0">
+                                <Stethoscope size={18} className="text-primary" />
+                            </div>
+                            <span>Guides users to appropriate care</span>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="w-full max-w-sm space-y-4">
                     <Link
                         to="/auth?mode=login"
-                        className="w-full flex items-center justify-center py-4 bg-primary text-white rounded-2xl font-bold text-lg hover:bg-primaryLight active:scale-[0.98] transition-all shadow-md shadow-primary/20"
+                        className="w-full flex items-center justify-center py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary-light active:scale-[0.98] transition-all shadow-md shadow-primary/30"
                     >
-                        {t('login')}
+                        Login
                     </Link>
                     <Link
                         to="/auth?mode=register"
-                        className="w-full flex items-center justify-center py-4 bg-white text-primary border-2 border-primary/20 rounded-2xl font-bold text-lg hover:bg-gray-50 hover:border-primary active:scale-[0.98] transition-all"
+                        className="w-full flex items-center justify-center py-4 bg-white text-primary border-2 border-primary/20 rounded-full font-bold text-lg hover:bg-gray-50 hover:border-primary active:scale-[0.98] transition-all shadow-sm"
                     >
-                        {t('register')}
+                        Register
                     </Link>
                 </div>
 
-                <div className="mt-12 flex items-center gap-2 text-gray-400 font-medium">
-                    <Mic size={18} />
-                    <span className="text-sm tracking-wide">Voice-First Healthcare</span>
-                </div>
             </main>
+
+            {/* Footer */}
+            <footer className="py-6 text-center text-gray-400 text-sm font-medium">
+                &copy; 2026 GramSethu
+            </footer>
         </div>
     );
 };
