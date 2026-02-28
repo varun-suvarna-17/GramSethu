@@ -1,31 +1,170 @@
-GramSethu MVP Walkthrough
-I have successfully built the GramSethu MVP – Voice-First Rural Healthcare Assistant according to your specifications. The application uses a robust combination of React (via Vite) and Tailwind CSS v4 to deliver a clean, fast, mobile-first experience.
+🏥 GramSethu – MVP
 
-Changes Made
-Initialization: Created a new React Vite project.
-Dependencies Installed: Added react-router-dom for navigation, lucide-react for iconography, and @tailwindcss/vite for styling.
-Language Context: Implemented a global React Context API dictionary supporting Kannada and Hindi.
-Voice Recognition Integration: Created a custom 
-useSpeechRecognition
- hook that natively interacts with the Web Speech API (webkitSpeechRecognition) to convert spoken language into text.
-Pages Built:
+Voice-First Rural Healthcare Assistant
+
+GramSethu is an offline-first, voice-enabled rural healthcare assistant designed to support early symptom triage in low-connectivity environments.
+
+This MVP demonstrates a clean, mobile-first interface built with modern web technologies and localized voice interaction.
+
+
+---
+
+🚀 Tech Stack
+
+React (Vite)
+
+Tailwind CSS v4
+
+React Router DOM
+
+Lucide React Icons
+
+Web Speech API (webkitSpeechRecognition)
+
+Web Storage API
+
+
+
+---
+
+✨ Features
+
+🌍 Multi-Language Support
+
+Implemented using React Context API with dictionary support for:
+
+Kannada
+
+Hindi
+
+English
+
+
+
+---
+
+🎤 Voice Recognition
+
+Custom useSpeechRecognition hook
+
+Converts spoken input into text using the Web Speech API
+
+Real-time transcription display
+
+
+
+---
+
+🧠 AI Simulation Logic (Rule-Based Triage)
+
+The MVP uses a localized keyword-based rule system to simulate AI behavior:
+
+Fever / Pain → Moderate Risk
+
+Chest Pain / Shortness of Breath → High Risk
+
+Other symptoms → Low Risk
+
+
+Supports keyword detection in English, Kannada, and Hindi.
+
+
+---
+
+📱 Pages Included
+
 Landing Page
-: A clean aesthetic introductory screen with a call to action.
-Auth Page
-: A unified Login and Registration demo screen.
+Clean introduction with call-to-action.
+
+Authentication Page
+Combined Login & Register demo interface.
+
 Dashboard
-: The main hub containing a Welcome banner and the Voice Record CTA.
+Main hub with welcome banner and voice record button.
+
 Voice Symptom Page
-: Displays transcription dynamically as the user speaks, and contains the AI simulation logic (fever/pain -> Moderate, chest pain/shortness of breath -> High, else Low).
+Displays live transcription and evaluates symptoms.
+
 Result Page
-: Displays the final risk level logically mapped to styling configurations (High=Red, Moderate=Orange, Low=Green), alongside targeted medical advice.
-NOTE
+Displays triage level with color-coded feedback:
 
-The application uses a simple localized rule set to simulate AI logic, evaluating keywords in English, Kannada, and Hindi. Results are saved locally referencing standard Web Storage API arrays.
+High → 🔴 Red
 
-Testing and Verification
-Build Process: Validated the application builds without issues, resolving Vite and Tailwind v4 breaking compatibility constraints gracefully.
-Run the Application: You can start the application at any time using:
-bash
+Moderate → 🟠 Orange
+
+Low → 🟢 Green
+Includes appropriate next-step guidance.
+
+
+
+
+---
+
+💾 Data Handling
+
+Results stored locally using Web Storage API.
+
+No external database integration (MVP scope).
+
+Offline-first architecture.
+
+
+
+---
+
+🛠 Setup & Installation
+
+1️⃣ Install Dependencies
+
+npm install
+
+2️⃣ Run Development Server
+
 npm run dev
-Since this completes the core MVP requirements, please review the functionality by running the development server and inform me of any desired feedback or aesthetic adjustments.
+
+The application will start locally via Vite.
+
+
+---
+
+🧪 Build Verification
+
+Successfully validated production build.
+
+Resolved compatibility constraints between Vite and Tailwind CSS v4.
+
+Application builds without runtime errors.
+
+
+
+---
+
+⚠️ Disclaimer
+
+This MVP uses a simplified rule-based system to simulate AI triage logic.
+It does not provide medical diagnosis and is intended solely for demonstration purposes.
+
+
+---
+
+🔮 Future Scope
+
+Replace rule-based logic with trained ML model
+
+Add encrypted storage
+
+Expand dialect recognition
+
+Integrate with public health APIs (subject to authorization)
+
+
+
+---
+
+👥 Team
+
+Built as part of a hackathon MVP demonstration.
+
+
+---
+
